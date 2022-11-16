@@ -6,10 +6,9 @@
 import java.util.Scanner;
 public class Main5{
 
-    public String[] solution(String[] words){
-        for(int i = 0; i < words.length; i++){
+    public String solution(String word){
 
-            char[] charArr = words[i].toCharArray();
+            char[] charArr = word.toCharArray();
             int lt= 0;
             int rt = charArr.length - 1;
             while(lt < rt){
@@ -26,27 +25,21 @@ public class Main5{
 
                 }
             };
-            words[i] = String.valueOf(charArr);
+            word = String.valueOf(charArr);
 
-        };
 
-        return words;
+        return word;
     }
 
 
     public static void main(String[] args){
         Main5 main = new Main5();
         Scanner scn = new Scanner(System.in);
-        int num = scn.nextInt();
-        String[] strArr = new String[num];
-        for(int i = 0; i < num; i ++){
-            strArr[i] = scn.next();
-        };
 
-        String[] newArr = main.solution(strArr);
-        for(String str : newArr){
-            System.out.println(str);
-        };
+        String str = scn.next();;
+
+        String answer = main.solution(str);
+        System.out.println(answer);
     }
 
 }
