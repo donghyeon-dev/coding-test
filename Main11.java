@@ -36,25 +36,23 @@ KST3SE2KFK3DJ2G2
  public class Main11{
 
      public String solution(String word){
-
-        String answer = "";
-        int count = 1;
-        for(int i = 0; i < word.length(); i++){
-
-          if(word.charAt(i) == word.charAt(i+1)){
-             count +=1;
-           } else{
-             answer += String.valueOf(word.charAt(i));
-             if(count > 1){
-               answer += String.valueOf(count);
-             };
-             count = 1;
-
+       word += " ";
+       String answer = "";
+       int count = 1;
+       for(int i = 0; i < word.length()-1; i++){
+         if(word.charAt(i) == word.charAt(i+1)){
+            count +=1;
+          } else{
+            answer += String.valueOf(word.charAt(i));
+            if(count > 1){
+              answer += String.valueOf(count);
+            };
+            count = 1;
            };
-          System.out.println("i =" + i + "word = "+word.charAt(i));
-        };   
-             return answer;
-     };
+         System.out.println("i =" + i + "word = "+word.charAt(i));
+       };   
+            return answer;
+    };
 
 
      public static void main(String[] args){
