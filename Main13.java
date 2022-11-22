@@ -24,13 +24,20 @@ N개의 정수를 입력받아, 자신의 바로 앞 수보다 큰 수만 출력
 
 7 9 6 12
 **/
- import java.util.Scanner;
+ import java.util.*;
  public class Main13{
 
-     public String solution(String word){
-             String answer = "";
+     public ArrayList<Integer>  solution(int[] num){
+       ArrayList<Integer> answerList = new ArrayList<>();
+       for(int i = 1; i < num.length; i++){
+         if(num[i] > num[i - 1]){
+          answerList.add(num[i]);
+         };
+
+       };
              
-             return answer;
+             
+             return answerList;
          };
 
 
@@ -38,9 +45,16 @@ N개의 정수를 입력받아, 자신의 바로 앞 수보다 큰 수만 출력
              Main13 main = new Main13();
              Scanner scn = new Scanner(System.in);
 
-             String str = scn.next();
-             String returnStr = main.solution(str);
-             System.out.println(returnStr);
+             int num = scn.nextInt();
+             int[] numList = new int[num+1];
+             for(int i = 1; i < numList.length; i++){
+                numList[i] = scn.nextInt();
+             };
+    
+             ArrayList<Integer> resultList = main.solution(numList);
+             for(int a : resultList){
+               System.out.print(a + " ");
+             };
          };
 
       
