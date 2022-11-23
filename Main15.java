@@ -12,25 +12,15 @@
              for(int i = 0; i < count; i++){
                if(entryA[i] == entryB[i]){
                  answer[i] = "D";
-               } else if (entryA[i]== 1){
-                 if(entryB[i] == 2){
+               } else if (entryA[i]== 1 && entryB[i] == 2){
                   answer[i] = "B";
-                 } else {
-                   answer[i] = "A";
-                 }
-               } else if (entryA[i] ==2){
-                 if(entryB[i] == 1){
-                   answer[i] = "A";
-                 } else {
+               } else if (entryA[i] ==2 && entryB[i] == 3){
                    answer[i] = "B";
-                 }
-               } else if(entryA[i] == 3){
-                 if(entryB[i] == 1){
+               } else if(entryA[i] == 3 && entryB[i] ==1 ){
                    answer[i] = "B";
-                 } else {
-                   answer[i] = "A";
-                 }
-               }
+               } else {
+                 answer[i] = "A";
+               }; 
              };
              
              return answer;
@@ -55,7 +45,7 @@
 
              for(String a : returnEntry){
 
-              System.out.print(a +" ");
+              System.out.println(a);
              }
          };
 
