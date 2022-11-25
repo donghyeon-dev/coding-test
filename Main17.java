@@ -7,8 +7,18 @@ public class Main17{
 
   public int solution(int num){
       int answer = 0;
-      for(int i = 0; i < num; i++){
-        if(i / i )
+      int[] arr = new int[num];
+      for(int i = 2; i < num; i++){
+        if(arr[i] == 0){
+          answer += 1;
+          for(int j = 0; j < num; j = j+i){
+            if(arr[j] == 0){
+              arr[j] = 1;
+            };
+
+          }
+  
+        }
       };
 
               
