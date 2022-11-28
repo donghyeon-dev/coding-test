@@ -23,9 +23,10 @@ public class Main21{
       //answer에 행/열 중 최대값이 들어온 상태
       for(int i = 0; i < num; i++){
           sumI += arr[i][i];
+          sumJ += arr[num -1 -i][i];
       }
       for(int i = 0; i < num; i++){
-        sumJ += arr[num -1 -i][i];
+
       }
       answer = Math.max(answer, sumI);
       answer = Math.max(answer, sumJ);
