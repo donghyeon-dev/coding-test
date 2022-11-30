@@ -51,7 +51,7 @@
 
 4
 **/
-import java.util.Scanner;
+import java.util.*;
 public class Main23{
 
   public int solution(int num, int[][] arr){
@@ -90,15 +90,6 @@ public class Main23{
     
 
     
-/**
-    System.out.println("\n ###############################");
-    for(int i = 0; i < 5; i++){
-      for(int j =0; j < num; j++){
-        System.out.print(resultArr[i][j] + " ");
-      }
-      System.out.println("");
-    }
-*/
       return answer;
     };
 
