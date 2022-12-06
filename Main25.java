@@ -1,7 +1,10 @@
 /**
  * @author : autocat
  * @created : 2022-12-01
- * 1. 두 배열 합치기
+ *
+ * two pinters algorithm 을 사용해야한다!!!
+ * O(nlogn) => O(n) 으로 효율성을 높여라
+ 1. 두 배열 합치기
 설명
 
 오름차순으로 정렬이 된 두 배열이 주어지면 두 배열을 오름차순으로 합쳐 출력하는 프로그램을 작성하세요.
@@ -36,20 +39,39 @@
 import java.util.*;
 public class Main25{
 
-  public int[] solution(int num, int[]numArr, int num2, int[] secondArr){
-      int[] answer = new int[num + num2];
-      int index = 0;
-      for(int i =0; i < answer.length; i++){
-        if(i < num){
-          answer[i] = numArr[i];
-        } else {
-          answer[i] = secondArr[index];
-          index++;
+  public ArrayList<Integer> solution(int num, int[]numArr, int num2, int[] secondArr){
+    ArrayList<Integer> answer = new ArrayList<Integer>();
+    int index = 0;
+    int firstIndex = 0;
+    int secondIndex = 0;
+     
+      while(firstIndex < num && secondIndex < num2){
+      if(numArr[firstIndex] <  secondArr[secondIndex]){
+          answer.add(numArr[firstIndex++]);
+        } 
+        /**else if (numArr[firstIndex] == secondArr[secondIndex]){
+          if(num < num2){
+            answer.add(secondArr[secondIndex++]);
+            firstIndex++;
+          } else {
+            answer.add(numArr[firstIndex++]);
+            secondIndex++;
+          }
         }
+        */
+        else {
+          answer.add(secondArr[secondIndex++]);
+        }
+
       }
 
-      Arrays.sort(answer);
-              
+      while(firstIndex < num){
+        answer.add(numArr[firstIndex++]);
+      }
+      while(secondIndex < num2){
+        answer.add(secondArr[secondIndex++]);
+      }
+
       return answer;
     };
 
@@ -69,9 +91,9 @@ public class Main25{
       for(int i = 0; i < num2; i++){
         secondArr[i] = scn.nextInt();
       }
-      int[] returnStr = main.solution(num, numArr, num2, secondArr);
-      for(int i = 0; i < returnStr.length; i++){
-        System.out.print(returnStr[i] +" ");
+      ArrayList<Integer> returnStr = main.solution(num, numArr, num2, secondArr);
+      for(int i : returnStr){
+        System.out.print(i+" ");
       }
     };
 
